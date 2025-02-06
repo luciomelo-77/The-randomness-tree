@@ -32,6 +32,11 @@ upgrades: {
         cost: new Decimal(25),
         effect(): if (hasupgrade('r', 11)) gain = gain.times(2)
     	},
-    etc
+    21: {
+	title: "Upgrade 1"
+	description: "doubles point gain",
+        cost: new Decimal(25),
+        effect(): if (hasupgrade('r', 11)) gain = gain.times(2)
+    	},
 }	
 })
