@@ -12,8 +12,8 @@ addLayer("r", {
     baseResource: "randomness", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.5, // Prestige currency exponent
-    gainMult() { // Calculate the multiplier for main currency from bonuses
+    exponent: 0.25, // Prestige currency exponent
+    gainMult(1) { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
     },
@@ -22,7 +22,7 @@ addLayer("r", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "r", description: "r: QR(Quick Reset) for randomness points layer ", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
 })
