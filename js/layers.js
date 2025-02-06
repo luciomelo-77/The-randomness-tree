@@ -25,4 +25,13 @@ addLayer("r", {
         {key: "r", description: "r: QR(Quick Reset) for randomness points layer ", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
+upgrades: {
+    11: {
+	title: "Upgrade 1"
+	description: "doubles point gain",
+        cost: new Decimal(25),
+        effect(): if (hasupgrade('r', 11)) gain = gain.times(2)
+    	},
+    etc
+}	
 })
